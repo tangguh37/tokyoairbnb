@@ -3973,3 +3973,1595 @@ alter table "tokyo_airbnb"."main_marts"."dim_listing__dbt_tmp" rename to "dim_li
 [0m10:52:08.177379 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e013d700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e010db30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e010e0d0>]}
 [0m10:52:08.179598 [debug] [MainThread]: Flushing usage events
 [0m10:52:09.288478 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:07:51.377905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a44134050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a46005f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a4306b9d0>]}
+
+
+============================== 11:07:51.389366 | 29e684cd-d011-4090-92a3-e330af8e0743 ==============================
+[0m11:07:51.389366 [info ] [MainThread]: Running with dbt=1.11.11
+[0m11:07:51.392834 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'version_check': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'profiles_dir': '.', 'partial_parse': 'True', 'log_format': 'default', 'empty': 'False', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --profiles-dir . --full-refresh --select fct_calendar monthly_occupancy', 'use_colors': 'True', 'write_json': 'True', 'log_path': '/home/tangguhiw/tokyoairbnb/dbt/airbnb/logs', 'indirect_selection': 'eager', 'debug': 'False', 'target_path': 'None', 'no_print': 'None', 'printer_width': '80'}
+[0m11:07:52.255348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '29e684cd-d011-4090-92a3-e330af8e0743', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a4328bce0>]}
+[0m11:07:52.521313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '29e684cd-d011-4090-92a3-e330af8e0743', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a4392cd10>]}
+[0m11:07:52.525995 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m11:07:52.799021 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m11:07:53.759361 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m11:07:53.761343 [debug] [MainThread]: Partial parsing: updated file: tokyo_airbnb://models/marts/monthly_occupancy.sql
+[0m11:07:53.762928 [debug] [MainThread]: Partial parsing: updated file: tokyo_airbnb://models/staging/stg_calendar.sql
+[0m11:07:56.127996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '29e684cd-d011-4090-92a3-e330af8e0743', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a38a15350>]}
+[0m11:07:56.729018 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m11:07:56.735623 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m11:07:56.782498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '29e684cd-d011-4090-92a3-e330af8e0743', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a38a78500>]}
+[0m11:07:56.784589 [info ] [MainThread]: Found 12 models, 18 data tests, 4 sources, 1 exposure, 485 macros
+[0m11:07:56.786776 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '29e684cd-d011-4090-92a3-e330af8e0743', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a38929e10>]}
+[0m11:07:56.807352 [info ] [MainThread]: 
+[0m11:07:56.809672 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:07:56.811694 [info ] [MainThread]: 
+[0m11:07:56.815665 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:07:56.850756 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb'
+[0m11:07:57.034273 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb"
+[0m11:07:57.036190 [debug] [ThreadPool]: On list_tokyo_airbnb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tokyo_airbnb"'
+    
+  
+  
+[0m11:07:57.037616 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:07:57.136862 [debug] [ThreadPool]: SQL status: OK in 0.099 seconds
+[0m11:07:57.141534 [debug] [ThreadPool]: On list_tokyo_airbnb: Close
+[0m11:07:57.144361 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tokyo_airbnb, now create_tokyo_airbnb_main_marts)
+[0m11:07:57.146054 [debug] [ThreadPool]: Creating schema "database: "tokyo_airbnb"
+schema: "main_marts"
+"
+[0m11:07:57.185054 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:07:57.186925 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_marts"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tokyo_airbnb'
+        and type='sqlite'
+    
+  
+[0m11:07:57.188389 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:07:57.193668 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m11:07:57.197864 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:07:57.199581 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: BEGIN
+[0m11:07:57.202718 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:07:57.205489 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:07:57.207178 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_marts"} */
+
+    
+    
+        create schema if not exists "tokyo_airbnb"."main_marts"
+    
+[0m11:07:57.210710 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:07:57.214869 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: COMMIT
+[0m11:07:57.216580 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:07:57.218141 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: COMMIT
+[0m11:07:57.221509 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:07:57.223515 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: Close
+[0m11:07:57.231173 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tokyo_airbnb_main_marts, now list_tokyo_airbnb_main_staging)
+[0m11:07:57.239539 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb_main_intermediate'
+[0m11:07:57.255935 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb_main_marts'
+[0m11:07:57.296457 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_marts"
+[0m11:07:57.298147 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_staging"
+[0m11:07:57.300430 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_intermediate"
+[0m11:07:57.302324 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: BEGIN
+[0m11:07:57.305240 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: BEGIN
+[0m11:07:57.306934 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: BEGIN
+[0m11:07:57.308486 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:07:57.309977 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:07:57.311523 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:07:57.318460 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m11:07:57.320064 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_staging"
+[0m11:07:57.321579 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_staging"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_staging'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:07:57.315337 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m11:07:57.326239 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_marts"
+[0m11:07:57.324291 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m11:07:57.332171 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_intermediate"
+[0m11:07:57.329955 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_marts"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_marts'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:07:57.333549 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_intermediate"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_intermediate'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:07:57.340571 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m11:07:57.347734 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: ROLLBACK
+[0m11:07:57.350210 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m11:07:57.351666 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m11:07:57.354107 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_staging'
+[0m11:07:57.361169 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: Close
+[0m11:07:57.359529 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: ROLLBACK
+[0m11:07:57.369029 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: ROLLBACK
+[0m11:07:57.375517 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_marts'
+[0m11:07:57.377509 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: Close
+[0m11:07:57.381242 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_intermediate'
+[0m11:07:57.388798 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: Close
+[0m11:07:57.393899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '29e684cd-d011-4090-92a3-e330af8e0743', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a386fa820>]}
+[0m11:07:57.395891 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:07:57.396978 [debug] [MainThread]: On master: BEGIN
+[0m11:07:57.397989 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:07:57.401154 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m11:07:57.402533 [debug] [MainThread]: On master: COMMIT
+[0m11:07:57.403932 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:07:57.405240 [debug] [MainThread]: On master: COMMIT
+[0m11:07:57.408089 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m11:07:57.409776 [debug] [MainThread]: On master: Close
+[0m11:07:57.425231 [debug] [Thread-1 (]: Began running node model.tokyo_airbnb.fct_calendar
+[0m11:07:57.428648 [info ] [Thread-1 (]: 1 of 2 START sql incremental model main_marts.fct_calendar ..................... [RUN]
+[0m11:07:57.431392 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_tokyo_airbnb_main_marts, now model.tokyo_airbnb.fct_calendar)
+[0m11:07:57.433943 [debug] [Thread-1 (]: Began compiling node model.tokyo_airbnb.fct_calendar
+[0m11:07:57.593087 [debug] [Thread-1 (]: Writing injected SQL for node "model.tokyo_airbnb.fct_calendar"
+[0m11:07:57.610999 [debug] [Thread-1 (]: Began executing node model.tokyo_airbnb.fct_calendar
+[0m11:07:57.870767 [debug] [Thread-1 (]: Writing runtime sql for node "model.tokyo_airbnb.fct_calendar"
+[0m11:07:57.872853 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:07:57.874073 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: BEGIN
+[0m11:07:57.875131 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:07:57.877639 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:07:57.878746 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:07:57.879644 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+  
+    
+    
+
+    create  table
+      "tokyo_airbnb"."main_marts"."fct_calendar__dbt_tmp"
+  
+    as (
+      
+
+WITH calendar AS (
+    SELECT * FROM "tokyo_airbnb"."main_staging"."stg_calendar"
+)
+
+SELECT
+    *,
+    CAST(listing_id AS VARCHAR) || '-' || CAST(calendar_date AS VARCHAR) AS cal_key
+FROM calendar
+
+
+    );
+  
+  
+  
+[0m11:08:00.291646 [debug] [Thread-1 (]: SQL status: OK in 2.410 seconds
+[0m11:08:00.299044 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.299666 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'fct_calendar'
+  
+[0m11:08:00.302066 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:00.308299 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.309401 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'fct_calendar'
+  
+[0m11:08:00.312406 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:08:00.322025 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.322658 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+alter table "tokyo_airbnb"."main_marts"."fct_calendar" rename to "fct_calendar__dbt_backup"
+[0m11:08:00.324046 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:00.327675 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.328322 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+alter table "tokyo_airbnb"."main_marts"."fct_calendar__dbt_tmp" rename to "fct_calendar"
+[0m11:08:00.329922 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:00.353986 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: COMMIT
+[0m11:08:00.354805 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.355485 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: COMMIT
+[0m11:08:00.516791 [debug] [Thread-1 (]: SQL status: OK in 0.160 seconds
+[0m11:08:00.518855 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.520039 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: BEGIN
+[0m11:08:00.522859 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:00.524007 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.524979 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'fct_calendar__dbt_backup'
+  
+[0m11:08:00.528323 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:08:00.532088 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.533621 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'fct_calendar__dbt_backup'
+  
+[0m11:08:00.539524 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m11:08:00.561810 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:00.563438 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+      drop table if exists "tokyo_airbnb"."main_marts"."fct_calendar__dbt_backup" cascade
+    
+[0m11:08:00.571558 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m11:08:00.582983 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: ROLLBACK
+[0m11:08:00.585874 [debug] [Thread-1 (]: Failed to rollback 'model.tokyo_airbnb.fct_calendar'
+[0m11:08:00.587744 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: Close
+[0m11:08:00.593597 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '29e684cd-d011-4090-92a3-e330af8e0743', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a38505b50>]}
+[0m11:08:00.596327 [info ] [Thread-1 (]: 1 of 2 OK created sql incremental model main_marts.fct_calendar ................ [[32mOK[0m in 3.16s]
+[0m11:08:00.600042 [debug] [Thread-1 (]: Finished running node model.tokyo_airbnb.fct_calendar
+[0m11:08:00.604422 [debug] [Thread-2 (]: Began running node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:00.606226 [info ] [Thread-2 (]: 2 of 2 START sql table model main_marts.monthly_occupancy ...................... [RUN]
+[0m11:08:00.608021 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_tokyo_airbnb_main_intermediate, now model.tokyo_airbnb.monthly_occupancy)
+[0m11:08:00.609278 [debug] [Thread-2 (]: Began compiling node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:00.623101 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:00.626079 [debug] [Thread-2 (]: Began executing node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:00.678846 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:00.681906 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:00.683832 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: BEGIN
+[0m11:08:00.686793 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m11:08:00.691084 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m11:08:00.692803 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:00.694717 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+
+  
+    
+    
+
+    create  table
+      "tokyo_airbnb"."main_marts"."monthly_occupancy__dbt_tmp"
+  
+    as (
+      WITH calendar AS (
+    SELECT * FROM "tokyo_airbnb"."main_marts"."fct_calendar"
+),
+
+listings AS (
+    SELECT listing_id, neighbourhood, room_type
+    FROM "tokyo_airbnb"."main_marts"."dim_listing"
+),
+
+monthly AS (
+    SELECT
+        DATE_TRUNC('month', calendar_date)::DATE AS month,
+        c.listing_id,
+        l.neighbourhood,
+        l.room_type,
+        COUNT(*) AS days_in_month,
+        SUM(CASE WHEN c.is_available THEN 0 ELSE 1 END) AS booked_days,
+        ROUND(AVG(CASE WHEN NOT c.is_available THEN c.price ELSE NULL END), 2) AS avg_price,
+        ROUND(SUM(CASE WHEN NOT c.is_available THEN c.price ELSE 0 END), 2) AS estimated_revenue
+    FROM calendar c
+    JOIN listings l ON c.listing_id = l.listing_id
+    GROUP BY month, c.listing_id, l.neighbourhood, l.room_type
+)
+
+SELECT
+    month,
+    listing_id,
+    neighbourhood,
+    room_type,
+    days_in_month,
+    booked_days,
+    (days_in_month - booked_days) AS available_days,
+    ROUND(booked_days * 100.0 / NULLIF(days_in_month, 0), 1) AS occupancy_rate_pct,
+    avg_price,
+    estimated_revenue,
+    ROUND(estimated_revenue / NULLIF(booked_days, 0), 2) AS avg_daily_rate
+FROM monthly
+    );
+  
+  
+[0m11:08:01.869815 [debug] [Thread-2 (]: SQL status: OK in 1.173 seconds
+[0m11:08:01.871520 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:01.872173 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'monthly_occupancy'
+  
+[0m11:08:01.874046 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m11:08:01.876259 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:01.877018 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'monthly_occupancy'
+  
+[0m11:08:01.879431 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m11:08:01.885033 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:01.885714 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+alter table "tokyo_airbnb"."main_marts"."monthly_occupancy" rename to "monthly_occupancy__dbt_backup"
+[0m11:08:01.887357 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m11:08:01.891376 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:01.891898 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+alter table "tokyo_airbnb"."main_marts"."monthly_occupancy__dbt_tmp" rename to "monthly_occupancy"
+[0m11:08:01.893300 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m11:08:01.895776 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: COMMIT
+[0m11:08:01.896771 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:01.897517 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: COMMIT
+[0m11:08:02.303983 [debug] [Thread-2 (]: SQL status: OK in 0.406 seconds
+[0m11:08:02.307816 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:02.308535 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+
+      drop table if exists "tokyo_airbnb"."main_marts"."monthly_occupancy__dbt_backup" cascade
+    
+[0m11:08:02.317207 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m11:08:02.322914 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: Close
+[0m11:08:02.324925 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '29e684cd-d011-4090-92a3-e330af8e0743', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a381d9650>]}
+[0m11:08:02.326878 [info ] [Thread-2 (]: 2 of 2 OK created sql table model main_marts.monthly_occupancy ................. [[32mOK[0m in 1.72s]
+[0m11:08:02.328731 [debug] [Thread-2 (]: Finished running node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:02.339790 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:02.340893 [debug] [MainThread]: On master: BEGIN
+[0m11:08:02.341852 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:08:02.344103 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m11:08:02.345136 [debug] [MainThread]: On master: COMMIT
+[0m11:08:02.345997 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:02.347294 [debug] [MainThread]: On master: COMMIT
+[0m11:08:02.349445 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:08:02.350911 [debug] [MainThread]: On master: Close
+[0m11:08:02.351983 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:08:02.352840 [debug] [MainThread]: Connection 'list_tokyo_airbnb_main_staging' was properly closed.
+[0m11:08:02.360966 [debug] [MainThread]: Connection 'model.tokyo_airbnb.monthly_occupancy' was properly closed.
+[0m11:08:02.362115 [debug] [MainThread]: Connection 'model.tokyo_airbnb.fct_calendar' was properly closed.
+[0m11:08:02.363596 [info ] [MainThread]: 
+[0m11:08:02.364911 [info ] [MainThread]: Finished running 1 incremental model, 1 table model in 0 hours 0 minutes and 5.55 seconds (5.55s).
+[0m11:08:02.367996 [debug] [MainThread]: Command end result
+[0m11:08:02.442314 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m11:08:02.449044 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m11:08:02.475789 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/run_results.json
+[0m11:08:02.476999 [info ] [MainThread]: 
+[0m11:08:02.478620 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:08:02.480055 [info ] [MainThread]: 
+[0m11:08:02.482162 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m11:08:02.487257 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 11.36125, "process_in_blocks": "0", "process_kernel_time": 3.473071, "process_mem_max_rss": "649424", "process_out_blocks": "301552", "process_user_time": 33.33671}
+[0m11:08:02.489192 [debug] [MainThread]: Command `dbt run` succeeded at 11:08:02.488608 after 11.36 seconds
+[0m11:08:02.490760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a39c92cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a3853d0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4a3b1126d0>]}
+[0m11:08:02.492109 [debug] [MainThread]: Flushing usage events
+[0m11:08:03.564482 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:08:14.852526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96b620050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96d2b9f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96a35b9d0>]}
+
+
+============================== 11:08:14.870072 | 0be60ce7-8dc3-4012-ab9c-7dc90a784182 ==============================
+[0m11:08:14.870072 [info ] [MainThread]: Running with dbt=1.11.11
+[0m11:08:14.873472 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'log_cache_events': 'False', 'version_check': 'True', 'log_format': 'default', 'warn_error': 'None', 'invocation_command': 'dbt run --profiles-dir . --select stg_calendar+', 'cache_selected_only': 'False', 'profiles_dir': '.', 'indirect_selection': 'eager', 'printer_width': '80', 'use_experimental_parser': 'False', 'use_colors': 'True', 'debug': 'False', 'partial_parse': 'True', 'quiet': 'False', 'target_path': 'None', 'introspect': 'True', 'write_json': 'True', 'no_print': 'None', 'empty': 'False', 'log_path': '/home/tangguhiw/tokyoairbnb/dbt/airbnb/logs', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True'}
+[0m11:08:15.868074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96a57bce0>]}
+[0m11:08:16.115932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96ae18d10>]}
+[0m11:08:16.123288 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m11:08:16.382025 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m11:08:17.270651 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:08:17.271826 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:08:17.272763 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:08:17.491228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96125f450>]}
+[0m11:08:17.977528 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m11:08:17.983535 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m11:08:18.079928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e961287890>]}
+[0m11:08:18.081720 [info ] [MainThread]: Found 12 models, 18 data tests, 4 sources, 1 exposure, 485 macros
+[0m11:08:18.083431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96106a430>]}
+[0m11:08:18.090771 [info ] [MainThread]: 
+[0m11:08:18.092878 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:08:18.094056 [info ] [MainThread]: 
+[0m11:08:18.095684 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:08:18.113687 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb'
+[0m11:08:18.117844 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb'
+[0m11:08:18.151247 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb'
+[0m11:08:18.334218 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb"
+[0m11:08:18.337633 [debug] [ThreadPool]: On list_tokyo_airbnb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tokyo_airbnb"'
+    
+  
+  
+[0m11:08:18.335964 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb"
+[0m11:08:18.339286 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb"
+[0m11:08:18.340615 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:08:18.342334 [debug] [ThreadPool]: On list_tokyo_airbnb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tokyo_airbnb"'
+    
+  
+  
+[0m11:08:18.344227 [debug] [ThreadPool]: On list_tokyo_airbnb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tokyo_airbnb"'
+    
+  
+  
+[0m11:08:18.346326 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:08:18.348744 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:08:18.429552 [debug] [ThreadPool]: SQL status: OK in 0.089 seconds
+[0m11:08:18.431383 [debug] [ThreadPool]: SQL status: OK in 0.085 seconds
+[0m11:08:18.434174 [debug] [ThreadPool]: SQL status: OK in 0.085 seconds
+[0m11:08:18.439028 [debug] [ThreadPool]: On list_tokyo_airbnb: Close
+[0m11:08:18.442900 [debug] [ThreadPool]: On list_tokyo_airbnb: Close
+[0m11:08:18.447307 [debug] [ThreadPool]: On list_tokyo_airbnb: Close
+[0m11:08:18.452190 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tokyo_airbnb, now create_tokyo_airbnb_main_intermediate)
+[0m11:08:18.455566 [debug] [ThreadPool]: Creating schema "database: "tokyo_airbnb"
+schema: "main_intermediate"
+"
+[0m11:08:18.453847 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tokyo_airbnb, now create_tokyo_airbnb_main_marts)
+[0m11:08:18.470271 [debug] [ThreadPool]: Creating schema "database: "tokyo_airbnb"
+schema: "main_marts"
+"
+[0m11:08:18.468681 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tokyo_airbnb, now create_tokyo_airbnb_main_staging)
+[0m11:08:18.495411 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_intermediate"
+[0m11:08:18.503172 [debug] [ThreadPool]: Creating schema "database: "tokyo_airbnb"
+schema: "main_staging"
+"
+[0m11:08:18.507634 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:08:18.509161 [debug] [ThreadPool]: On create_tokyo_airbnb_main_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_intermediate"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tokyo_airbnb'
+        and type='sqlite'
+    
+  
+[0m11:08:18.514582 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_staging"
+[0m11:08:18.515939 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_marts"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tokyo_airbnb'
+        and type='sqlite'
+    
+  
+[0m11:08:18.517093 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:08:18.518295 [debug] [ThreadPool]: On create_tokyo_airbnb_main_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_staging"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tokyo_airbnb'
+        and type='sqlite'
+    
+  
+[0m11:08:18.521328 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:08:18.519500 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:08:18.524149 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m11:08:18.526495 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m11:08:18.529865 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_intermediate"
+[0m11:08:18.531057 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m11:08:18.535169 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:08:18.537959 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: BEGIN
+[0m11:08:18.536345 [debug] [ThreadPool]: On create_tokyo_airbnb_main_intermediate: BEGIN
+[0m11:08:18.541138 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_staging"
+[0m11:08:18.544072 [debug] [ThreadPool]: On create_tokyo_airbnb_main_staging: BEGIN
+[0m11:08:18.545461 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m11:08:18.549229 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:08:18.547684 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m11:08:18.551135 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_marts"} */
+
+    
+    
+        create schema if not exists "tokyo_airbnb"."main_marts"
+    
+[0m11:08:18.552829 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m11:08:18.554048 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_intermediate"
+[0m11:08:18.558310 [debug] [ThreadPool]: On create_tokyo_airbnb_main_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_intermediate"} */
+
+    
+    
+        create schema if not exists "tokyo_airbnb"."main_intermediate"
+    
+[0m11:08:18.560173 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m11:08:18.556392 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_staging"
+[0m11:08:18.565205 [debug] [ThreadPool]: On create_tokyo_airbnb_main_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_staging"} */
+
+    
+    
+        create schema if not exists "tokyo_airbnb"."main_staging"
+    
+[0m11:08:18.563759 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: COMMIT
+[0m11:08:18.568577 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:08:18.566686 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m11:08:18.569957 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: COMMIT
+[0m11:08:18.571301 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m11:08:18.573880 [debug] [ThreadPool]: On create_tokyo_airbnb_main_intermediate: COMMIT
+[0m11:08:18.579718 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_intermediate"
+[0m11:08:18.582228 [debug] [ThreadPool]: On create_tokyo_airbnb_main_intermediate: COMMIT
+[0m11:08:18.577910 [debug] [ThreadPool]: On create_tokyo_airbnb_main_staging: COMMIT
+[0m11:08:18.581024 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m11:08:18.584072 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_staging"
+[0m11:08:18.585515 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:08:18.586622 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: Close
+[0m11:08:18.588209 [debug] [ThreadPool]: On create_tokyo_airbnb_main_staging: COMMIT
+[0m11:08:18.589532 [debug] [ThreadPool]: On create_tokyo_airbnb_main_intermediate: Close
+[0m11:08:18.595601 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:08:18.597047 [debug] [ThreadPool]: On create_tokyo_airbnb_main_staging: Close
+[0m11:08:18.607499 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tokyo_airbnb_main_marts, now list_tokyo_airbnb_main_intermediate)
+[0m11:08:18.611119 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tokyo_airbnb_main_intermediate, now list_tokyo_airbnb_main_marts)
+[0m11:08:18.613540 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tokyo_airbnb_main_staging, now list_tokyo_airbnb_main_staging)
+[0m11:08:18.636632 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_intermediate"
+[0m11:08:18.650655 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_marts"
+[0m11:08:18.651566 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_staging"
+[0m11:08:18.652838 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: BEGIN
+[0m11:08:18.654272 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: BEGIN
+[0m11:08:18.655986 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: BEGIN
+[0m11:08:18.657700 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:08:18.659980 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:08:18.662054 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:08:18.666809 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m11:08:18.668220 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m11:08:18.673138 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_marts"
+[0m11:08:18.676881 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_marts"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_marts'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:08:18.671389 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_intermediate"
+[0m11:08:18.674588 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m11:08:18.681326 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_staging"
+[0m11:08:18.679479 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_intermediate"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_intermediate'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:08:18.683762 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_staging"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_staging'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:08:18.696500 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m11:08:18.700131 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m11:08:18.702763 [debug] [ThreadPool]: SQL status: OK in 0.024 seconds
+[0m11:08:18.709147 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: ROLLBACK
+[0m11:08:18.714078 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: ROLLBACK
+[0m11:08:18.718274 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: ROLLBACK
+[0m11:08:18.723273 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_intermediate'
+[0m11:08:18.729891 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_staging'
+[0m11:08:18.733661 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_marts'
+[0m11:08:18.735479 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: Close
+[0m11:08:18.737426 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: Close
+[0m11:08:18.739862 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: Close
+[0m11:08:18.755306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e9604d47a0>]}
+[0m11:08:18.757643 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:18.759690 [debug] [MainThread]: On master: BEGIN
+[0m11:08:18.763563 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:08:18.767279 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m11:08:18.768681 [debug] [MainThread]: On master: COMMIT
+[0m11:08:18.770744 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:18.772486 [debug] [MainThread]: On master: COMMIT
+[0m11:08:18.775434 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:08:18.777293 [debug] [MainThread]: On master: Close
+[0m11:08:18.793358 [debug] [Thread-1 (]: Began running node model.tokyo_airbnb.stg_calendar
+[0m11:08:18.795890 [info ] [Thread-1 (]: 1 of 6 START sql view model main_staging.stg_calendar .......................... [RUN]
+[0m11:08:18.798339 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_tokyo_airbnb_main_marts, now model.tokyo_airbnb.stg_calendar)
+[0m11:08:18.800735 [debug] [Thread-1 (]: Began compiling node model.tokyo_airbnb.stg_calendar
+[0m11:08:18.834538 [debug] [Thread-1 (]: Writing injected SQL for node "model.tokyo_airbnb.stg_calendar"
+[0m11:08:18.849019 [debug] [Thread-1 (]: Began executing node model.tokyo_airbnb.stg_calendar
+[0m11:08:19.038873 [debug] [Thread-1 (]: Writing runtime sql for node "model.tokyo_airbnb.stg_calendar"
+[0m11:08:19.043436 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.stg_calendar"
+[0m11:08:19.045611 [debug] [Thread-1 (]: On model.tokyo_airbnb.stg_calendar: BEGIN
+[0m11:08:19.047672 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:08:19.052020 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m11:08:19.053921 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.stg_calendar"
+[0m11:08:19.055873 [debug] [Thread-1 (]: On model.tokyo_airbnb.stg_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.stg_calendar"} */
+
+  
+  create view "tokyo_airbnb"."main_staging"."stg_calendar__dbt_tmp" as (
+    WITH source AS (
+    SELECT * FROM "tokyo_airbnb"."main"."raw_calendar"
+),
+
+cleaned AS (
+    SELECT
+        listing_id,
+        date::DATE AS calendar_date,
+        available AS is_available,
+        TRY_CAST(REPLACE(REPLACE(price, '$', ''), ',', '') AS DECIMAL(10,2)) AS price,
+        TRY_CAST(REPLACE(REPLACE(adjusted_price, '$', ''), ',', '') AS DECIMAL(10,2)) AS adjusted_price,
+        minimum_nights::INT AS minimum_nights,
+        maximum_nights::INT AS maximum_nights
+    FROM source
+)
+
+SELECT * FROM cleaned
+  );
+
+[0m11:08:19.062742 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m11:08:19.089663 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.stg_calendar"
+[0m11:08:19.091484 [debug] [Thread-1 (]: On model.tokyo_airbnb.stg_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.stg_calendar"} */
+alter view "tokyo_airbnb"."main_staging"."stg_calendar" rename to "stg_calendar__dbt_backup"
+[0m11:08:19.096021 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m11:08:19.106658 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.stg_calendar"
+[0m11:08:19.107938 [debug] [Thread-1 (]: On model.tokyo_airbnb.stg_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.stg_calendar"} */
+alter view "tokyo_airbnb"."main_staging"."stg_calendar__dbt_tmp" rename to "stg_calendar"
+[0m11:08:19.111764 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:08:19.165477 [debug] [Thread-1 (]: On model.tokyo_airbnb.stg_calendar: COMMIT
+[0m11:08:19.167124 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.stg_calendar"
+[0m11:08:19.168874 [debug] [Thread-1 (]: On model.tokyo_airbnb.stg_calendar: COMMIT
+[0m11:08:19.181467 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m11:08:19.200000 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.stg_calendar"
+[0m11:08:19.203132 [debug] [Thread-1 (]: On model.tokyo_airbnb.stg_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.stg_calendar"} */
+
+      drop view if exists "tokyo_airbnb"."main_staging"."stg_calendar__dbt_backup" cascade
+    
+[0m11:08:19.215299 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m11:08:19.222866 [debug] [Thread-1 (]: On model.tokyo_airbnb.stg_calendar: Close
+[0m11:08:19.228953 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96101b710>]}
+[0m11:08:19.231402 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main_staging.stg_calendar ..................... [[32mOK[0m in 0.43s]
+[0m11:08:19.233748 [debug] [Thread-1 (]: Finished running node model.tokyo_airbnb.stg_calendar
+[0m11:08:19.238805 [debug] [Thread-2 (]: Began running node model.tokyo_airbnb.fct_calendar
+[0m11:08:19.244720 [info ] [Thread-2 (]: 2 of 6 START sql incremental model main_marts.fct_calendar ..................... [RUN]
+[0m11:08:19.241573 [debug] [Thread-3 (]: Began running node model.tokyo_airbnb.int_listings_enriched
+[0m11:08:19.249476 [info ] [Thread-3 (]: 3 of 6 START sql view model main_intermediate.int_listings_enriched ............ [RUN]
+[0m11:08:19.247406 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_tokyo_airbnb_main_intermediate, now model.tokyo_airbnb.fct_calendar)
+[0m11:08:19.253786 [debug] [Thread-2 (]: Began compiling node model.tokyo_airbnb.fct_calendar
+[0m11:08:19.252042 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_tokyo_airbnb_main_staging, now model.tokyo_airbnb.int_listings_enriched)
+[0m11:08:19.266794 [debug] [Thread-3 (]: Began compiling node model.tokyo_airbnb.int_listings_enriched
+[0m11:08:19.297383 [debug] [Thread-3 (]: Writing injected SQL for node "model.tokyo_airbnb.int_listings_enriched"
+[0m11:08:19.315135 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokyo_airbnb.fct_calendar"
+[0m11:08:19.317680 [debug] [Thread-2 (]: Began executing node model.tokyo_airbnb.fct_calendar
+[0m11:08:19.319574 [debug] [Thread-3 (]: Began executing node model.tokyo_airbnb.int_listings_enriched
+[0m11:08:19.355079 [debug] [Thread-3 (]: Writing runtime sql for node "model.tokyo_airbnb.int_listings_enriched"
+[0m11:08:19.390139 [debug] [Thread-3 (]: Using duckdb connection "model.tokyo_airbnb.int_listings_enriched"
+[0m11:08:19.397137 [debug] [Thread-3 (]: On model.tokyo_airbnb.int_listings_enriched: BEGIN
+[0m11:08:19.404063 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m11:08:19.423596 [debug] [Thread-3 (]: SQL status: OK in 0.020 seconds
+[0m11:08:19.431190 [debug] [Thread-3 (]: Using duckdb connection "model.tokyo_airbnb.int_listings_enriched"
+[0m11:08:19.438714 [debug] [Thread-3 (]: On model.tokyo_airbnb.int_listings_enriched: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.int_listings_enriched"} */
+
+  
+  create view "tokyo_airbnb"."main_intermediate"."int_listings_enriched__dbt_tmp" as (
+    WITH listings AS (
+    SELECT * FROM "tokyo_airbnb"."main_staging"."stg_listings"
+),
+
+reviews AS (
+    SELECT
+        listing_id,
+        COUNT(*) AS total_reviews,
+        MIN(review_date) AS first_review,
+        MAX(review_date) AS last_review
+    FROM "tokyo_airbnb"."main_staging"."stg_reviews"
+    GROUP BY listing_id
+),
+
+calendar_stats AS (
+    SELECT
+        listing_id,
+        AVG(CASE WHEN is_available THEN NULL ELSE price END) AS avg_price,
+        SUM(CASE WHEN is_available THEN 1 ELSE 0 END) AS available_days,
+        COUNT(*) AS total_days,
+        ROUND(SUM(CASE WHEN is_available THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(*), 0), 1) AS occupancy_rate_pct
+    FROM "tokyo_airbnb"."main_staging"."stg_calendar"
+    GROUP BY listing_id
+)
+
+SELECT
+    l.*,
+    COALESCE(r.total_reviews, 0) AS total_reviews,
+    r.first_review,
+    r.last_review,
+    cs.avg_price AS avg_calendar_price,
+    cs.available_days,
+    cs.total_days,
+    cs.occupancy_rate_pct,
+    CASE
+        WHEN l.price < 5000 THEN 'Budget'
+        WHEN l.price < 15000 THEN 'Mid-range'
+        WHEN l.price < 30000 THEN 'Premium'
+        ELSE 'Luxury'
+    END AS price_tier,
+    CASE
+        WHEN l.review_scores_rating >= 95 THEN 'Excellent'
+        WHEN l.review_scores_rating >= 85 THEN 'Great'
+        WHEN l.review_scores_rating >= 70 THEN 'Good'
+        WHEN l.review_scores_rating IS NOT NULL THEN 'Fair'
+        ELSE 'Unrated'
+    END AS rating_category
+FROM listings l
+LEFT JOIN reviews r ON l.listing_id = r.listing_id
+LEFT JOIN calendar_stats cs ON l.listing_id = cs.listing_id
+  );
+
+[0m11:08:19.477714 [debug] [Thread-3 (]: SQL status: OK in 0.032 seconds
+[0m11:08:19.498886 [debug] [Thread-3 (]: Using duckdb connection "model.tokyo_airbnb.int_listings_enriched"
+[0m11:08:19.506312 [debug] [Thread-3 (]: On model.tokyo_airbnb.int_listings_enriched: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.int_listings_enriched"} */
+alter view "tokyo_airbnb"."main_intermediate"."int_listings_enriched" rename to "int_listings_enriched__dbt_backup"
+[0m11:08:19.533385 [debug] [Thread-3 (]: SQL status: OK in 0.012 seconds
+[0m11:08:19.546936 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:19.552992 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+      drop table if exists "tokyo_airbnb"."main_marts"."fct_calendar__dbt_backup" cascade
+    
+[0m11:08:19.551469 [debug] [Thread-3 (]: Using duckdb connection "model.tokyo_airbnb.int_listings_enriched"
+[0m11:08:19.557259 [debug] [Thread-3 (]: On model.tokyo_airbnb.int_listings_enriched: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.int_listings_enriched"} */
+alter view "tokyo_airbnb"."main_intermediate"."int_listings_enriched__dbt_tmp" rename to "int_listings_enriched"
+[0m11:08:19.555037 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m11:08:19.561234 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m11:08:19.565898 [debug] [Thread-3 (]: On model.tokyo_airbnb.int_listings_enriched: COMMIT
+[0m11:08:19.567609 [debug] [Thread-3 (]: Using duckdb connection "model.tokyo_airbnb.int_listings_enriched"
+[0m11:08:19.569704 [debug] [Thread-3 (]: On model.tokyo_airbnb.int_listings_enriched: COMMIT
+[0m11:08:19.590701 [debug] [Thread-2 (]: SQL status: OK in 0.036 seconds
+[0m11:08:19.615035 [debug] [Thread-3 (]: SQL status: OK in 0.043 seconds
+[0m11:08:19.635074 [debug] [Thread-3 (]: Using duckdb connection "model.tokyo_airbnb.int_listings_enriched"
+[0m11:08:19.647734 [debug] [Thread-3 (]: On model.tokyo_airbnb.int_listings_enriched: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.int_listings_enriched"} */
+
+      drop view if exists "tokyo_airbnb"."main_intermediate"."int_listings_enriched__dbt_backup" cascade
+    
+[0m11:08:19.650995 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:19.654255 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    
+  
+    
+    
+
+    create temporary table
+      "fct_calendar__dbt_tmp20260623110819515559"
+  
+    as (
+      
+
+WITH calendar AS (
+    SELECT * FROM "tokyo_airbnb"."main_staging"."stg_calendar"
+)
+
+SELECT
+    *,
+    CAST(listing_id AS VARCHAR) || '-' || CAST(calendar_date AS VARCHAR) AS cal_key
+FROM calendar
+
+
+WHERE (listing_id, calendar_date) NOT IN (
+    SELECT listing_id, calendar_date FROM "tokyo_airbnb"."main_marts"."fct_calendar"
+)
+
+    );
+  
+  
+  
+[0m11:08:19.662208 [debug] [Thread-3 (]: SQL status: OK in 0.009 seconds
+[0m11:08:19.666797 [debug] [Thread-3 (]: On model.tokyo_airbnb.int_listings_enriched: Close
+[0m11:08:19.669389 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e93c78dbd0>]}
+[0m11:08:19.672433 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main_intermediate.int_listings_enriched ....... [[32mOK[0m in 0.42s]
+[0m11:08:19.680735 [debug] [Thread-3 (]: Finished running node model.tokyo_airbnb.int_listings_enriched
+[0m11:08:19.695933 [debug] [Thread-4 (]: Began running node model.tokyo_airbnb.dim_listing
+[0m11:08:19.699002 [info ] [Thread-4 (]: 4 of 6 START sql table model main_marts.dim_listing ............................ [RUN]
+[0m11:08:19.702020 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.tokyo_airbnb.dim_listing'
+[0m11:08:19.715988 [debug] [Thread-4 (]: Began compiling node model.tokyo_airbnb.dim_listing
+[0m11:08:19.750133 [debug] [Thread-4 (]: Writing injected SQL for node "model.tokyo_airbnb.dim_listing"
+[0m11:08:19.754330 [debug] [Thread-4 (]: Began executing node model.tokyo_airbnb.dim_listing
+[0m11:08:19.878012 [debug] [Thread-4 (]: Writing runtime sql for node "model.tokyo_airbnb.dim_listing"
+[0m11:08:19.880600 [debug] [Thread-4 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m11:08:19.882380 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: BEGIN
+[0m11:08:19.884832 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m11:08:19.889003 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m11:08:19.890766 [debug] [Thread-4 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m11:08:19.893280 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+
+  
+    
+    
+
+    create  table
+      "tokyo_airbnb"."main_marts"."dim_listing__dbt_tmp"
+  
+    as (
+      WITH listings AS (
+    SELECT * FROM "tokyo_airbnb"."main_intermediate"."int_listings_enriched"
+)
+
+SELECT
+    listing_id,
+    host_id,
+    host_name,
+    listing_name,
+    neighbourhood,
+    latitude,
+    longitude,
+    property_type,
+    room_type,
+    accommodates,
+    bathrooms,
+    bedrooms,
+    beds,
+    amenities,
+    price,
+    minimum_nights,
+    maximum_nights,
+    has_availability,
+    availability_365,
+    number_of_reviews,
+    number_of_reviews_ltm,
+    first_review_date,
+    last_review_date,
+    review_scores_rating,
+    review_scores_accuracy,
+    review_scores_cleanliness,
+    review_scores_checkin,
+    review_scores_communication,
+    review_scores_location,
+    review_scores_value,
+    instant_bookable,
+    reviews_per_month,
+    total_reviews,
+    avg_calendar_price,
+    available_days,
+    total_days,
+    occupancy_rate_pct,
+    price_tier,
+    rating_category
+FROM listings
+    );
+  
+  
+[0m11:08:21.144703 [debug] [Thread-4 (]: SQL status: OK in 1.242 seconds
+[0m11:08:21.167377 [debug] [Thread-4 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m11:08:21.169195 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'dim_listing'
+  
+[0m11:08:21.172504 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m11:08:21.178574 [debug] [Thread-4 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m11:08:21.180667 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'dim_listing'
+  
+[0m11:08:21.183827 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m11:08:21.190687 [debug] [Thread-4 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m11:08:21.191922 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+alter table "tokyo_airbnb"."main_marts"."dim_listing" rename to "dim_listing__dbt_backup"
+[0m11:08:21.194725 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m11:08:21.201842 [debug] [Thread-4 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m11:08:21.202559 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+alter table "tokyo_airbnb"."main_marts"."dim_listing__dbt_tmp" rename to "dim_listing"
+[0m11:08:21.204492 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m11:08:21.215098 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: COMMIT
+[0m11:08:21.215934 [debug] [Thread-4 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m11:08:21.216525 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: COMMIT
+[0m11:08:21.254169 [debug] [Thread-2 (]: SQL status: OK in 1.598 seconds
+[0m11:08:21.268001 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:21.268894 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: BEGIN
+[0m11:08:21.270490 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m11:08:21.271329 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:21.272060 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from system.information_schema.columns
+      where table_name = 'fct_calendar__dbt_tmp20260623110819515559'
+      
+      
+      order by ordinal_position
+
+  
+[0m11:08:21.305078 [debug] [Thread-2 (]: SQL status: OK in 0.032 seconds
+[0m11:08:21.315265 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:21.316201 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from system.information_schema.columns
+      where table_name = 'fct_calendar'
+      
+      and lower(table_schema) = 'main_marts'
+      
+      
+      and lower(table_catalog) = 'tokyo_airbnb'
+      
+      order by ordinal_position
+
+  
+[0m11:08:21.322972 [debug] [Thread-4 (]: SQL status: OK in 0.106 seconds
+[0m11:08:21.329226 [debug] [Thread-2 (]: SQL status: OK in 0.012 seconds
+[0m11:08:21.329892 [debug] [Thread-4 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m11:08:21.331450 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+
+      drop table if exists "tokyo_airbnb"."main_marts"."dim_listing__dbt_backup" cascade
+    
+[0m11:08:21.354556 [debug] [Thread-4 (]: SQL status: OK in 0.017 seconds
+[0m11:08:21.360140 [debug] [Thread-4 (]: On model.tokyo_airbnb.dim_listing: Close
+[0m11:08:21.357106 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:21.362830 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from system.information_schema.columns
+      where table_name = 'fct_calendar__dbt_tmp20260623110819515559'
+      
+      
+      order by ordinal_position
+
+  
+[0m11:08:21.361679 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e93c757070>]}
+[0m11:08:21.365008 [info ] [Thread-4 (]: 4 of 6 OK created sql table model main_marts.dim_listing ....................... [[32mOK[0m in 1.66s]
+[0m11:08:21.366358 [debug] [Thread-4 (]: Finished running node model.tokyo_airbnb.dim_listing
+[0m11:08:21.368583 [debug] [Thread-1 (]: Began running node model.tokyo_airbnb.pricing_analysis
+[0m11:08:21.369766 [info ] [Thread-1 (]: 5 of 6 START sql table model main_marts.pricing_analysis ....................... [RUN]
+[0m11:08:21.370980 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tokyo_airbnb.stg_calendar, now model.tokyo_airbnb.pricing_analysis)
+[0m11:08:21.372664 [debug] [Thread-1 (]: Began compiling node model.tokyo_airbnb.pricing_analysis
+[0m11:08:21.371878 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m11:08:21.379133 [debug] [Thread-1 (]: Writing injected SQL for node "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.385376 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:21.386166 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from system.information_schema.columns
+      where table_name = 'fct_calendar'
+      
+      and lower(table_schema) = 'main_marts'
+      
+      
+      and lower(table_catalog) = 'tokyo_airbnb'
+      
+      order by ordinal_position
+
+  
+[0m11:08:21.387644 [debug] [Thread-1 (]: Began executing node model.tokyo_airbnb.pricing_analysis
+[0m11:08:21.392818 [debug] [Thread-1 (]: Writing runtime sql for node "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.395989 [debug] [Thread-2 (]: SQL status: OK in 0.009 seconds
+[0m11:08:21.414138 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.420484 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: BEGIN
+[0m11:08:21.422136 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:08:21.421346 [debug] [Thread-2 (]: 
+    In "tokyo_airbnb"."main_marts"."fct_calendar":
+        Schema changed: True
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: [{'column_name': 'price', 'new_type': 'DECIMAL(10,2)'}, {'column_name': 'adjusted_price', 'new_type': 'DECIMAL(10,2)'}]
+  
+[0m11:08:21.423804 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: ROLLBACK
+[0m11:08:21.424719 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m11:08:21.428887 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.430101 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.pricing_analysis"} */
+
+  
+    
+    
+
+    create  table
+      "tokyo_airbnb"."main_marts"."pricing_analysis__dbt_tmp"
+  
+    as (
+      WITH listings AS (
+    SELECT * FROM "tokyo_airbnb"."main_marts"."dim_listing"
+)
+
+SELECT
+    neighbourhood,
+    room_type,
+    COUNT(*) AS num_listings,
+    ROUND(AVG(price), 2) AS avg_price,
+    ROUND(MIN(price), 2) AS min_price,
+    ROUND(PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY price), 2) AS p25_price,
+    ROUND(PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY price), 2) AS median_price,
+    ROUND(PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY price), 2) AS p75_price,
+    ROUND(MAX(price), 2) AS max_price,
+    ROUND(AVG(review_scores_rating), 1) AS avg_review_score,
+    ROUND(AVG(occupancy_rate_pct), 1) AS avg_occupancy_pct,
+    ROUND(AVG(reviews_per_month), 2) AS avg_reviews_per_month,
+    ROUND(AVG(minimum_nights), 0) AS avg_min_nights
+FROM listings
+WHERE price > 0
+GROUP BY neighbourhood, room_type
+HAVING COUNT(*) >= 5
+ORDER BY neighbourhood, room_type
+    );
+  
+  
+[0m11:08:21.440355 [debug] [Thread-2 (]: Failed to rollback 'model.tokyo_airbnb.fct_calendar'
+[0m11:08:21.441169 [debug] [Thread-2 (]: On model.tokyo_airbnb.fct_calendar: Close
+[0m11:08:21.452059 [debug] [Thread-2 (]: Compilation Error in model fct_calendar (models/marts/fct_calendar.sql)
+  
+                The source and target schemas on this incremental model are out of sync!
+                They can be reconciled in several ways:
+                  - set the `on_schema_change` config to either append_new_columns or sync_all_columns, depending on your situation.
+                  - Re-run the incremental model with `full_refresh: True` to update the target schema.
+                  - update the schema manually and re-run the process.
+  
+                Additional troubleshooting context:
+                   Source columns not in target: []
+                   Target columns not in source: []
+                   New column types: [{'column_name': 'price', 'new_type': 'DECIMAL(10,2)'}, {'column_name': 'adjusted_price', 'new_type': 'DECIMAL(10,2)'}]
+            
+  
+  > in macro default__process_schema_changes (macros/materializations/models/incremental/on_schema_change.sql)
+  > called by macro process_schema_changes (macros/materializations/models/incremental/on_schema_change.sql)
+  > called by macro materialization_incremental_duckdb (macros/materializations/incremental.sql)
+  > called by model fct_calendar (models/marts/fct_calendar.sql)
+[0m11:08:21.453777 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e93c146350>]}
+[0m11:08:21.455820 [error] [Thread-2 (]: 2 of 6 ERROR creating sql incremental model main_marts.fct_calendar ............ [[31mERROR[0m in 2.21s]
+[0m11:08:21.457693 [debug] [Thread-2 (]: Finished running node model.tokyo_airbnb.fct_calendar
+[0m11:08:21.459784 [debug] [Thread-7 (]: Marking all children of 'model.tokyo_airbnb.fct_calendar' to be skipped because of status 'error'.  Reason: Compilation Error in model fct_calendar (models/marts/fct_calendar.sql)
+  
+                The source and target schemas on this incremental model are out of sync!
+                They can be reconciled in several ways:
+                  - set the `on_schema_change` config to either append_new_columns or sync_all_columns, depending on your situation.
+                  - Re-run the incremental model with `full_refresh: True` to update the target schema.
+                  - update the schema manually and re-run the process.
+  
+                Additional troubleshooting context:
+                   Source columns not in target: []
+                   Target columns not in source: []
+                   New column types: [{'column_name': 'price', 'new_type': 'DECIMAL(10,2)'}, {'column_name': 'adjusted_price', 'new_type': 'DECIMAL(10,2)'}]
+            
+  
+  > in macro default__process_schema_changes (macros/materializations/models/incremental/on_schema_change.sql)
+  > called by macro process_schema_changes (macros/materializations/models/incremental/on_schema_change.sql)
+  > called by macro materialization_incremental_duckdb (macros/materializations/incremental.sql)
+  > called by model fct_calendar (models/marts/fct_calendar.sql).
+[0m11:08:21.463820 [debug] [Thread-3 (]: Began running node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:21.464687 [debug] [Thread-1 (]: SQL status: OK in 0.033 seconds
+[0m11:08:21.468272 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.465576 [info ] [Thread-3 (]: 6 of 6 SKIP relation main_marts.monthly_occupancy .............................. [[33mSKIP[0m]
+[0m11:08:21.471024 [debug] [Thread-3 (]: Finished running node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:21.469690 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.pricing_analysis"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'pricing_analysis'
+  
+[0m11:08:21.473995 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:08:21.476204 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.476822 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.pricing_analysis"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'pricing_analysis'
+  
+[0m11:08:21.478791 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:21.484397 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.485436 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.pricing_analysis"} */
+alter table "tokyo_airbnb"."main_marts"."pricing_analysis" rename to "pricing_analysis__dbt_backup"
+[0m11:08:21.487710 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:21.493716 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.494578 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.pricing_analysis"} */
+alter table "tokyo_airbnb"."main_marts"."pricing_analysis__dbt_tmp" rename to "pricing_analysis"
+[0m11:08:21.496286 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:21.499374 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: COMMIT
+[0m11:08:21.500427 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.501353 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: COMMIT
+[0m11:08:21.804728 [debug] [Thread-1 (]: SQL status: OK in 0.302 seconds
+[0m11:08:21.808435 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.pricing_analysis"
+[0m11:08:21.809099 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.pricing_analysis"} */
+
+      drop table if exists "tokyo_airbnb"."main_marts"."pricing_analysis__dbt_backup" cascade
+    
+[0m11:08:21.815181 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m11:08:21.819820 [debug] [Thread-1 (]: On model.tokyo_airbnb.pricing_analysis: Close
+[0m11:08:21.821153 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0be60ce7-8dc3-4012-ab9c-7dc90a784182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e93c712510>]}
+[0m11:08:21.822620 [info ] [Thread-1 (]: 5 of 6 OK created sql table model main_marts.pricing_analysis .................. [[32mOK[0m in 0.45s]
+[0m11:08:21.823751 [debug] [Thread-1 (]: Finished running node model.tokyo_airbnb.pricing_analysis
+[0m11:08:21.833062 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:21.833800 [debug] [MainThread]: On master: BEGIN
+[0m11:08:21.834878 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:08:21.836638 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m11:08:21.837147 [debug] [MainThread]: On master: COMMIT
+[0m11:08:21.837464 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:21.837765 [debug] [MainThread]: On master: COMMIT
+[0m11:08:21.838836 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:08:21.839471 [debug] [MainThread]: On master: Close
+[0m11:08:21.840168 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:08:21.840509 [debug] [MainThread]: Connection 'model.tokyo_airbnb.fct_calendar' was properly closed.
+[0m11:08:21.840780 [debug] [MainThread]: Connection 'model.tokyo_airbnb.int_listings_enriched' was properly closed.
+[0m11:08:21.841066 [debug] [MainThread]: Connection 'model.tokyo_airbnb.pricing_analysis' was properly closed.
+[0m11:08:21.841326 [debug] [MainThread]: Connection 'model.tokyo_airbnb.dim_listing' was properly closed.
+[0m11:08:21.841774 [info ] [MainThread]: 
+[0m11:08:21.842486 [info ] [MainThread]: Finished running 1 incremental model, 3 table models, 2 view models in 0 hours 0 minutes and 3.75 seconds (3.75s).
+[0m11:08:21.844485 [debug] [MainThread]: Command end result
+[0m11:08:21.946535 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m11:08:21.953414 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m11:08:21.979045 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/run_results.json
+[0m11:08:21.980203 [info ] [MainThread]: 
+[0m11:08:21.981779 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:08:21.983531 [info ] [MainThread]: 
+[0m11:08:21.985531 [error] [MainThread]: [31mFailure in model fct_calendar (models/marts/fct_calendar.sql)[0m
+[0m11:08:21.987656 [error] [MainThread]:   Compilation Error in model fct_calendar (models/marts/fct_calendar.sql)
+  
+                The source and target schemas on this incremental model are out of sync!
+                They can be reconciled in several ways:
+                  - set the `on_schema_change` config to either append_new_columns or sync_all_columns, depending on your situation.
+                  - Re-run the incremental model with `full_refresh: True` to update the target schema.
+                  - update the schema manually and re-run the process.
+  
+                Additional troubleshooting context:
+                   Source columns not in target: []
+                   Target columns not in source: []
+                   New column types: [{'column_name': 'price', 'new_type': 'DECIMAL(10,2)'}, {'column_name': 'adjusted_price', 'new_type': 'DECIMAL(10,2)'}]
+            
+  
+  > in macro default__process_schema_changes (macros/materializations/models/incremental/on_schema_change.sql)
+  > called by macro process_schema_changes (macros/materializations/models/incremental/on_schema_change.sql)
+  > called by macro materialization_incremental_duckdb (macros/materializations/incremental.sql)
+  > called by model fct_calendar (models/marts/fct_calendar.sql)
+[0m11:08:21.989717 [info ] [MainThread]: 
+[0m11:08:21.996334 [info ] [MainThread]:   compiled code at target/compiled/tokyo_airbnb/models/marts/fct_calendar.sql
+[0m11:08:21.999511 [info ] [MainThread]: 
+[0m11:08:22.001454 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=1 SKIP=1 NO-OP=0 TOTAL=6
+[0m11:08:22.004918 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 7.547493, "process_in_blocks": "0", "process_kernel_time": 2.87184, "process_mem_max_rss": "826496", "process_out_blocks": "68128", "process_user_time": 19.703009}
+[0m11:08:22.006653 [debug] [MainThread]: Command `dbt run` failed at 11:08:22.006127 after 7.55 seconds
+[0m11:08:22.008036 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e96aca3d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e93c003fb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e93c003770>]}
+[0m11:08:22.009390 [debug] [MainThread]: Flushing usage events
+[0m11:08:23.325331 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:08:34.363618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd775220050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd776eb60d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd773f5b9d0>]}
+
+
+============================== 11:08:34.374742 | 4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873 ==============================
+[0m11:08:34.374742 [info ] [MainThread]: Running with dbt=1.11.11
+[0m11:08:34.376923 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'printer_width': '80', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'static_parser': 'True', 'log_path': '/home/tangguhiw/tokyoairbnb/dbt/airbnb/logs', 'partial_parse': 'True', 'target_path': 'None', 'write_json': 'True', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'debug': 'False', 'empty': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --profiles-dir . --full-refresh --select fct_calendar monthly_occupancy', 'fail_fast': 'False', 'profiles_dir': '.', 'use_colors': 'True', 'version_check': 'True'}
+[0m11:08:35.329242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd77417bce0>]}
+[0m11:08:35.609103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd774a18d10>]}
+[0m11:08:35.615288 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m11:08:35.868623 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m11:08:36.705315 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:08:36.706447 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:08:36.707278 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:08:36.945203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd762e5f450>]}
+[0m11:08:37.445630 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m11:08:37.452739 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m11:08:37.575745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd762e8b890>]}
+[0m11:08:37.577552 [info ] [MainThread]: Found 12 models, 18 data tests, 4 sources, 1 exposure, 485 macros
+[0m11:08:37.579569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd762c6a430>]}
+[0m11:08:37.592268 [info ] [MainThread]: 
+[0m11:08:37.594099 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:08:37.596091 [info ] [MainThread]: 
+[0m11:08:37.598252 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:08:37.622741 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb'
+[0m11:08:37.803492 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb"
+[0m11:08:37.807082 [debug] [ThreadPool]: On list_tokyo_airbnb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tokyo_airbnb"'
+    
+  
+  
+[0m11:08:37.808951 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:08:37.947601 [debug] [ThreadPool]: SQL status: OK in 0.139 seconds
+[0m11:08:37.952052 [debug] [ThreadPool]: On list_tokyo_airbnb: Close
+[0m11:08:37.954876 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tokyo_airbnb, now create_tokyo_airbnb_main_marts)
+[0m11:08:37.956674 [debug] [ThreadPool]: Creating schema "database: "tokyo_airbnb"
+schema: "main_marts"
+"
+[0m11:08:37.989452 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:08:37.991054 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_marts"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tokyo_airbnb'
+        and type='sqlite'
+    
+  
+[0m11:08:37.992812 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:08:37.999931 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m11:08:38.005749 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:08:38.007277 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: BEGIN
+[0m11:08:38.009839 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:08:38.011680 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:08:38.013160 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_marts"} */
+
+    
+    
+        create schema if not exists "tokyo_airbnb"."main_marts"
+    
+[0m11:08:38.016571 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:08:38.019264 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: COMMIT
+[0m11:08:38.020437 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m11:08:38.021445 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: COMMIT
+[0m11:08:38.023791 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:08:38.025019 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: Close
+[0m11:08:38.034846 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tokyo_airbnb_main_marts, now list_tokyo_airbnb_main_intermediate)
+[0m11:08:38.043015 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb_main_staging'
+[0m11:08:38.057239 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb_main_marts'
+[0m11:08:38.086966 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_intermediate"
+[0m11:08:38.092626 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_staging"
+[0m11:08:38.094829 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_marts"
+[0m11:08:38.096059 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: BEGIN
+[0m11:08:38.098252 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: BEGIN
+[0m11:08:38.100364 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: BEGIN
+[0m11:08:38.102264 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:08:38.104217 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:08:38.106367 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:08:38.112934 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m11:08:38.115638 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_staging"
+[0m11:08:38.117845 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m11:08:38.119190 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m11:08:38.120470 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_staging"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_staging'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:08:38.121976 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_marts"
+[0m11:08:38.123526 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_intermediate"
+[0m11:08:38.127601 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_intermediate"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_intermediate'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:08:38.125888 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_marts"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_marts'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m11:08:38.141780 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m11:08:38.143808 [debug] [ThreadPool]: SQL status: OK in 0.019 seconds
+[0m11:08:38.145431 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m11:08:38.158248 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: ROLLBACK
+[0m11:08:38.152209 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: ROLLBACK
+[0m11:08:38.167431 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_staging'
+[0m11:08:38.163414 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: ROLLBACK
+[0m11:08:38.168978 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: Close
+[0m11:08:38.171557 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_marts'
+[0m11:08:38.173928 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_intermediate'
+[0m11:08:38.176711 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: Close
+[0m11:08:38.182304 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: Close
+[0m11:08:38.197338 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd76225e680>]}
+[0m11:08:38.199658 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:38.201068 [debug] [MainThread]: On master: BEGIN
+[0m11:08:38.202184 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:08:38.205507 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m11:08:38.207411 [debug] [MainThread]: On master: COMMIT
+[0m11:08:38.208800 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:38.210152 [debug] [MainThread]: On master: COMMIT
+[0m11:08:38.213674 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:08:38.215702 [debug] [MainThread]: On master: Close
+[0m11:08:38.229413 [debug] [Thread-1 (]: Began running node model.tokyo_airbnb.fct_calendar
+[0m11:08:38.232389 [info ] [Thread-1 (]: 1 of 2 START sql incremental model main_marts.fct_calendar ..................... [RUN]
+[0m11:08:38.234999 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_tokyo_airbnb_main_marts, now model.tokyo_airbnb.fct_calendar)
+[0m11:08:38.236968 [debug] [Thread-1 (]: Began compiling node model.tokyo_airbnb.fct_calendar
+[0m11:08:38.317790 [debug] [Thread-1 (]: Writing injected SQL for node "model.tokyo_airbnb.fct_calendar"
+[0m11:08:38.324660 [debug] [Thread-1 (]: Began executing node model.tokyo_airbnb.fct_calendar
+[0m11:08:38.583767 [debug] [Thread-1 (]: Writing runtime sql for node "model.tokyo_airbnb.fct_calendar"
+[0m11:08:38.587176 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:38.589115 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: BEGIN
+[0m11:08:38.591006 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:08:38.594847 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m11:08:38.596287 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:38.597706 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+  
+    
+    
+
+    create  table
+      "tokyo_airbnb"."main_marts"."fct_calendar__dbt_tmp"
+  
+    as (
+      
+
+WITH calendar AS (
+    SELECT * FROM "tokyo_airbnb"."main_staging"."stg_calendar"
+)
+
+SELECT
+    *,
+    CAST(listing_id AS VARCHAR) || '-' || CAST(calendar_date AS VARCHAR) AS cal_key
+FROM calendar
+
+
+    );
+  
+  
+  
+[0m11:08:41.624426 [debug] [Thread-1 (]: SQL status: OK in 3.025 seconds
+[0m11:08:41.632003 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:41.632950 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'fct_calendar'
+  
+[0m11:08:41.635795 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:08:41.638022 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:41.638831 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'fct_calendar'
+  
+[0m11:08:41.641137 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:08:41.648988 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:41.649648 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+alter table "tokyo_airbnb"."main_marts"."fct_calendar" rename to "fct_calendar__dbt_backup"
+[0m11:08:41.651876 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:41.655796 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:41.656284 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+alter table "tokyo_airbnb"."main_marts"."fct_calendar__dbt_tmp" rename to "fct_calendar"
+[0m11:08:41.657591 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:08:41.690461 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: COMMIT
+[0m11:08:41.691124 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:41.691768 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: COMMIT
+[0m11:08:42.104197 [debug] [Thread-1 (]: SQL status: OK in 0.411 seconds
+[0m11:08:42.106641 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:42.108747 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: BEGIN
+[0m11:08:42.112345 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:08:42.113614 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:42.114921 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'fct_calendar__dbt_backup'
+  
+[0m11:08:42.119189 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m11:08:42.123457 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:42.127824 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'fct_calendar__dbt_backup'
+  
+[0m11:08:42.133689 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m11:08:42.160278 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.fct_calendar"
+[0m11:08:42.162102 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.fct_calendar"} */
+
+      drop table if exists "tokyo_airbnb"."main_marts"."fct_calendar__dbt_backup" cascade
+    
+[0m11:08:42.166206 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:08:42.180668 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: ROLLBACK
+[0m11:08:42.184344 [debug] [Thread-1 (]: Failed to rollback 'model.tokyo_airbnb.fct_calendar'
+[0m11:08:42.186865 [debug] [Thread-1 (]: On model.tokyo_airbnb.fct_calendar: Close
+[0m11:08:42.195233 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd762c2e5d0>]}
+[0m11:08:42.198075 [info ] [Thread-1 (]: 1 of 2 OK created sql incremental model main_marts.fct_calendar ................ [[32mOK[0m in 3.96s]
+[0m11:08:42.201359 [debug] [Thread-1 (]: Finished running node model.tokyo_airbnb.fct_calendar
+[0m11:08:42.205927 [debug] [Thread-2 (]: Began running node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:42.208126 [info ] [Thread-2 (]: 2 of 2 START sql table model main_marts.monthly_occupancy ...................... [RUN]
+[0m11:08:42.209941 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_tokyo_airbnb_main_intermediate, now model.tokyo_airbnb.monthly_occupancy)
+[0m11:08:42.212884 [debug] [Thread-2 (]: Began compiling node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:42.230719 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:42.236421 [debug] [Thread-2 (]: Began executing node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:42.303841 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:42.306071 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:42.309303 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: BEGIN
+[0m11:08:42.312508 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m11:08:42.316219 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m11:08:42.318225 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:42.320059 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+
+  
+    
+    
+
+    create  table
+      "tokyo_airbnb"."main_marts"."monthly_occupancy__dbt_tmp"
+  
+    as (
+      WITH calendar AS (
+    SELECT * FROM "tokyo_airbnb"."main_marts"."fct_calendar"
+),
+
+listings AS (
+    SELECT listing_id, neighbourhood, room_type
+    FROM "tokyo_airbnb"."main_marts"."dim_listing"
+),
+
+monthly AS (
+    SELECT
+        DATE_TRUNC('month', calendar_date)::DATE AS month,
+        c.listing_id,
+        l.neighbourhood,
+        l.room_type,
+        COUNT(*) AS days_in_month,
+        SUM(CASE WHEN c.is_available THEN 0 ELSE 1 END) AS booked_days,
+        ROUND(AVG(CASE WHEN NOT c.is_available THEN c.price ELSE NULL END), 2) AS avg_price,
+        ROUND(SUM(CASE WHEN NOT c.is_available THEN c.price ELSE 0 END), 2) AS estimated_revenue
+    FROM calendar c
+    JOIN listings l ON c.listing_id = l.listing_id
+    GROUP BY month, c.listing_id, l.neighbourhood, l.room_type
+)
+
+SELECT
+    month,
+    listing_id,
+    neighbourhood,
+    room_type,
+    days_in_month,
+    booked_days,
+    (days_in_month - booked_days) AS available_days,
+    ROUND(booked_days * 100.0 / NULLIF(days_in_month, 0), 1) AS occupancy_rate_pct,
+    avg_price,
+    estimated_revenue,
+    ROUND(estimated_revenue / NULLIF(booked_days, 0), 2) AS avg_daily_rate
+FROM monthly
+    );
+  
+  
+[0m11:08:43.555752 [debug] [Thread-2 (]: SQL status: OK in 1.234 seconds
+[0m11:08:43.557760 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:43.558581 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'monthly_occupancy'
+  
+[0m11:08:43.561625 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m11:08:43.564217 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:43.564938 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'monthly_occupancy'
+  
+[0m11:08:43.568181 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m11:08:43.573503 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:43.574198 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+alter table "tokyo_airbnb"."main_marts"."monthly_occupancy" rename to "monthly_occupancy__dbt_backup"
+[0m11:08:43.576058 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m11:08:43.580903 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:43.581648 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+alter table "tokyo_airbnb"."main_marts"."monthly_occupancy__dbt_tmp" rename to "monthly_occupancy"
+[0m11:08:43.583335 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m11:08:43.585613 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: COMMIT
+[0m11:08:43.586165 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:43.586876 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: COMMIT
+[0m11:08:44.025982 [debug] [Thread-2 (]: SQL status: OK in 0.438 seconds
+[0m11:08:44.029162 [debug] [Thread-2 (]: Using duckdb connection "model.tokyo_airbnb.monthly_occupancy"
+[0m11:08:44.029692 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.monthly_occupancy"} */
+
+      drop table if exists "tokyo_airbnb"."main_marts"."monthly_occupancy__dbt_backup" cascade
+    
+[0m11:08:44.036967 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m11:08:44.041703 [debug] [Thread-2 (]: On model.tokyo_airbnb.monthly_occupancy: Close
+[0m11:08:44.043879 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4ae033ee-d5e1-4bb3-bb8f-2ceffe7ff873', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd760525020>]}
+[0m11:08:44.046056 [info ] [Thread-2 (]: 2 of 2 OK created sql table model main_marts.monthly_occupancy ................. [[32mOK[0m in 1.83s]
+[0m11:08:44.048384 [debug] [Thread-2 (]: Finished running node model.tokyo_airbnb.monthly_occupancy
+[0m11:08:44.062343 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:44.063979 [debug] [MainThread]: On master: BEGIN
+[0m11:08:44.065808 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:08:44.068887 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m11:08:44.070011 [debug] [MainThread]: On master: COMMIT
+[0m11:08:44.071169 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:08:44.072513 [debug] [MainThread]: On master: COMMIT
+[0m11:08:44.075150 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:08:44.076587 [debug] [MainThread]: On master: Close
+[0m11:08:44.078003 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:08:44.079196 [debug] [MainThread]: Connection 'model.tokyo_airbnb.monthly_occupancy' was properly closed.
+[0m11:08:44.080833 [debug] [MainThread]: Connection 'list_tokyo_airbnb_main_staging' was properly closed.
+[0m11:08:44.082333 [debug] [MainThread]: Connection 'model.tokyo_airbnb.fct_calendar' was properly closed.
+[0m11:08:44.083951 [info ] [MainThread]: 
+[0m11:08:44.085231 [info ] [MainThread]: Finished running 1 incremental model, 1 table model in 0 hours 0 minutes and 6.49 seconds (6.49s).
+[0m11:08:44.089918 [debug] [MainThread]: Command end result
+[0m11:08:44.222576 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m11:08:44.227563 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m11:08:44.258272 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/run_results.json
+[0m11:08:44.259671 [info ] [MainThread]: 
+[0m11:08:44.261613 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:08:44.263051 [info ] [MainThread]: 
+[0m11:08:44.264205 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m11:08:44.268607 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 10.158316, "process_in_blocks": "0", "process_kernel_time": 5.316341, "process_mem_max_rss": "648176", "process_out_blocks": "300384", "process_user_time": 32.864292}
+[0m11:08:44.270749 [debug] [MainThread]: Command `dbt run` succeeded at 11:08:44.270154 after 10.16 seconds
+[0m11:08:44.272150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd76c1780f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd76229a960>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd762c9d150>]}
+[0m11:08:44.273478 [debug] [MainThread]: Flushing usage events
+[0m11:08:45.351774 [debug] [MainThread]: An error was encountered while trying to flush usage events

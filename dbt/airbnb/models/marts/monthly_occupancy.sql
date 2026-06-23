@@ -15,8 +15,8 @@ monthly AS (
         l.room_type,
         COUNT(*) AS days_in_month,
         SUM(CASE WHEN c.is_available THEN 0 ELSE 1 END) AS booked_days,
-        ROUND(AVG(c.price), 2) AS avg_price,
-        ROUND(SUM(CASE WHEN c.is_available THEN 0 ELSE c.price END), 2) AS estimated_revenue
+        ROUND(AVG(CASE WHEN NOT c.is_available THEN c.price ELSE NULL END), 2) AS avg_price,
+        ROUND(SUM(CASE WHEN NOT c.is_available THEN c.price ELSE 0 END), 2) AS estimated_revenue
     FROM calendar c
     JOIN listings l ON c.listing_id = l.listing_id
     GROUP BY month, c.listing_id, l.neighbourhood, l.room_type
