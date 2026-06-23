@@ -9,8 +9,6 @@ st.set_page_config(page_title="Tokyo Airbnb Analytics", layout="wide")
 
 DB_PATH = Path(__file__).resolve().parent.parent / "data" / "tokyo_airbnb.duckdb"
 
-# dbt creates schemas as {custom_schema}_{target_schema}
-# e.g., marts + main = main_marts
 MART = "main_marts"
 
 
@@ -104,6 +102,7 @@ def main():
                        ROUND(AVG(occupancy_rate_pct), 1) AS avg_occupancy,
                        ROUND(AVG(avg_price), 0) AS avg_price
                 FROM {MART}.monthly_occupancy
+                WHERE avg_price IS NOT NULL
                 GROUP BY month, room_type
                 ORDER BY month
             """)
@@ -128,7 +127,7 @@ def main():
                 )
                 st.plotly_chart(fig4, use_container_width=True)
         except Exception as e:
-            st.info(f"Run `make dbt-run` to populate occupancy data: {e}")
+            st.info(f"Occupancy data not available yet: {e}")
 
     with tab3:
         st.subheader("Host Distribution")
@@ -156,13 +155,37 @@ def main():
             GROUP BY host_type
         """)
         if not sh.empty:
-            fig6 = px.bar(
-                sh.melt(id_vars="host_type"),
-                x="host_type", y="value", color="variable",
-                title="Superhost vs Regular Host Performance",
-                barmode="group",
-            )
-            st.plotly_chart(fig6, use_container_width=True)
+            col_a, col_b, col_c = st.columns(3)
+            with col_a:
+                fig_price = px.bar(
+                    sh, x="host_type", y="avg_price",
+                    title="Avg Price",
+                    color="host_type",
+                    color_discrete_map={"Superhost": "#FF5A5F", "Regular": "#00A699"},
+                    text_auto=".0f",
+                )
+                fig_price.update_layout(showlegend=False)
+                st.plotly_chart(fig_price, use_container_width=True)
+            with col_b:
+                fig_rating = px.bar(
+                    sh, x="host_type", y="avg_rating",
+                    title="Avg Rating",
+                    color="host_type",
+                    color_discrete_map={"Superhost": "#FF5A5F", "Regular": "#00A699"},
+                    text_auto=".1f",
+                )
+                fig_rating.update_layout(showlegend=False)
+                st.plotly_chart(fig_rating, use_container_width=True)
+            with col_c:
+                fig_reviews = px.bar(
+                    sh, x="host_type", y="avg_reviews",
+                    title="Avg Reviews",
+                    color="host_type",
+                    color_discrete_map={"Superhost": "#FF5A5F", "Regular": "#00A699"},
+                    text_auto=".0f",
+                )
+                fig_reviews.update_layout(showlegend=False)
+                st.plotly_chart(fig_reviews, use_container_width=True)
 
     with tab4:
         st.subheader("Reviews Over Time")
@@ -182,7 +205,7 @@ def main():
                 )
                 st.plotly_chart(fig7, use_container_width=True)
         except Exception as e:
-            st.info(f"Run `make dbt-run` to populate review data: {e}")
+            st.info(f"Review data not available yet: {e}")
 
         st.subheader("Top Reviewed Listings")
         top = query(f"""
