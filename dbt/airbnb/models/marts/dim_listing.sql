@@ -4,6 +4,8 @@ WITH listings AS (
 
 SELECT
     listing_id,
+    host_id,
+    host_name,
     listing_name,
     neighbourhood,
     latitude,

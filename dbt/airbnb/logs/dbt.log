@@ -3414,3 +3414,562 @@ with relations AS (
 [0m10:02:30.616684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c686026f710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c68584c9650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c68584c9700>]}
 [0m10:02:30.617535 [debug] [MainThread]: Flushing usage events
 [0m10:02:31.673244 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:49:26.986586 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7af1c38050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7af3979f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7af09739d0>]}
+
+
+============================== 10:49:27.007331 | 30189898-d762-4af0-8f6f-aa4fcdbaeedf ==============================
+[0m10:49:27.007331 [info ] [MainThread]: Running with dbt=1.11.11
+[0m10:49:27.009381 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'no_print': 'None', 'printer_width': '80', 'debug': 'False', 'version_check': 'True', 'introspect': 'True', 'log_path': '/home/tangguhiw/tokyoairbnb/dbt/airbnb/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'log_format': 'default', 'partial_parse': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'target_path': 'None', 'invocation_command': 'dbt run --profiles-dir . --select dim_listing', 'profiles_dir': '.', 'log_cache_events': 'False', 'write_json': 'True', 'quiet': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:49:28.017300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '30189898-d762-4af0-8f6f-aa4fcdbaeedf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7af0b93ce0>]}
+[0m10:49:28.274100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '30189898-d762-4af0-8f6f-aa4fcdbaeedf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7af1430d10>]}
+[0m10:49:28.278643 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m10:49:28.524479 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m10:49:29.514545 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:49:29.516907 [debug] [MainThread]: Partial parsing: updated file: tokyo_airbnb://models/marts/dim_listing.sql
+[0m10:49:31.130112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '30189898-d762-4af0-8f6f-aa4fcdbaeedf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7ad35b8550>]}
+[0m10:49:31.608444 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m10:49:31.613775 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m10:49:31.662747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '30189898-d762-4af0-8f6f-aa4fcdbaeedf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7ad24849b0>]}
+[0m10:49:31.664237 [info ] [MainThread]: Found 12 models, 18 data tests, 4 sources, 1 exposure, 485 macros
+[0m10:49:31.665618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '30189898-d762-4af0-8f6f-aa4fcdbaeedf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7ad248e0b0>]}
+[0m10:49:31.672636 [info ] [MainThread]: 
+[0m10:49:31.673886 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m10:49:31.675271 [info ] [MainThread]: 
+[0m10:49:31.676819 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m10:49:31.680044 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb'
+[0m10:49:31.886148 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb"
+[0m10:49:31.887606 [debug] [ThreadPool]: On list_tokyo_airbnb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tokyo_airbnb"'
+    
+  
+  
+[0m10:49:31.888606 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:49:31.926143 [debug] [ThreadPool]: DuckDB adapter: duckdb error: IO Error: Could not set lock on file "/home/tangguhiw/tokyoairbnb/data/tokyo_airbnb.duckdb": Conflicting lock is held in /usr/bin/python3.14 (PID 2124). See also https://duckdb.org/docs/stable/connect/concurrency
+[0m10:49:31.928036 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tokyo_airbnb"'
+    
+  
+  
+[0m10:49:31.929316 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m10:49:31.930858 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:49:31.980774 [debug] [ThreadPool]: DuckDB adapter: duckdb error: IO Error: Could not set lock on file "/home/tangguhiw/tokyoairbnb/data/tokyo_airbnb.duckdb": Conflicting lock is held in /usr/bin/python3.14 (PID 2124). See also https://duckdb.org/docs/stable/connect/concurrency
+[0m10:49:31.982124 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: macro list_schemas
+[0m10:49:31.983552 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m10:49:31.987610 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:49:32.008659 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:49:32.010052 [debug] [MainThread]: Connection 'list_tokyo_airbnb' was properly closed.
+[0m10:49:32.011463 [info ] [MainThread]: 
+[0m10:49:32.012787 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m10:49:32.014654 [error] [MainThread]: Encountered an error:
+IO Error: Could not set lock on file "/home/tangguhiw/tokyoairbnb/data/tokyo_airbnb.duckdb": Conflicting lock is held in /usr/bin/python3.14 (PID 2124). See also https://duckdb.org/docs/stable/connect/concurrency
+[0m10:49:32.076111 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/connections.py", line 95, in exception_handler
+    yield
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/sql/connections.py", line 147, in add_query
+    cursor = connection.handle.cursor()
+             ^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ~~~~~~~~~~~~~~~^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+_duckdb.IOException: IO Error: Could not set lock on file "/home/tangguhiw/tokyoairbnb/data/tokyo_airbnb.duckdb": Conflicting lock is held in /usr/bin/python3.14 (PID 2124). See also https://duckdb.org/docs/stable/connect/concurrency
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/connections.py", line 95, in exception_handler
+    yield
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/base/impl.py", line 1357, in execute_macro
+    result = macro_function(**kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt_common/clients/jinja.py", line 427, in __call__
+    return self.call_macro(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 20, in macro
+  File "/usr/lib/python3/dist-packages/jinja2/sandbox.py", line 404, in call
+    return __context.call(__obj, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 50, in macro
+  File "/usr/lib/python3/dist-packages/jinja2/sandbox.py", line 404, in call
+    return __context.call(__obj, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 33, in macro
+  File "/usr/lib/python3/dist-packages/jinja2/sandbox.py", line 404, in call
+    return __context.call(__obj, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 52, in macro
+  File "/usr/lib/python3/dist-packages/jinja2/sandbox.py", line 404, in call
+    return __context.call(__obj, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt_common/record.py", line 538, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/base/impl.py", line 508, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/connections.py", line 130, in execute
+    return super().execute(sql, auto_begin, fetch, limit)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/sql/connections.py", line 219, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/sql/connections.py", line 131, in add_query
+    with self.exception_handler(sql):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/connections.py", line 102, in exception_handler
+    self.rollback_if_open()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ~~~~~~~~~~~~~~~^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+_duckdb.IOException: IO Error: Could not set lock on file "/home/tangguhiw/tokyoairbnb/data/tokyo_airbnb.duckdb": Conflicting lock is held in /usr/bin/python3.14 (PID 2124). See also https://duckdb.org/docs/stable/connect/concurrency
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/cli/requires.py", line 276, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/cli/requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/cli/requires.py", line 391, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/cli/requires.py", line 368, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/cli/requires.py", line 408, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/cli/main.py", line 593, in run
+    results = task.run()
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/task/runnable.py", line 626, in run
+    result = self.execute_with_hooks(selected_uids)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/task/runnable.py", line 559, in execute_with_hooks
+    before_run_status = self.before_run(adapter, selected_uids)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/task/run.py", line 1114, in before_run
+    self.create_schemas(adapter, required_schemas)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/task/runnable.py", line 734, in create_schemas
+    existing_schemas_lowered.update(ls_future.result())
+                                    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 395, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/usr/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt_common/utils/executor.py", line 16, in connected
+    return func(*args, **kwargs)
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/task/runnable.py", line 709, in list_schemas
+    for s in adapter.list_schemas(database_quoted)
+             ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/sql/impl.py", line 219, in list_schemas
+    results = self.execute_macro(LIST_SCHEMAS_MACRO_NAME, kwargs={"database": database})
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/base/impl.py", line 1356, in execute_macro
+    with self.connections.exception_handler(f"macro {macro_name}"):
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/connections.py", line 102, in exception_handler
+    self.rollback_if_open()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ~~~~~~~~~~~~~~~^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tangguhiw/.local/lib/python3.14/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+_duckdb.IOException: IO Error: Could not set lock on file "/home/tangguhiw/tokyoairbnb/data/tokyo_airbnb.duckdb": Conflicting lock is held in /usr/bin/python3.14 (PID 2124). See also https://duckdb.org/docs/stable/connect/concurrency
+
+[0m10:49:32.084553 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 5.4891753, "process_in_blocks": "144", "process_kernel_time": 1.60892, "process_mem_max_rss": "194008", "process_out_blocks": "2520", "process_user_time": 10.014629}
+[0m10:49:32.087845 [debug] [MainThread]: Command `dbt run` failed at 10:49:32.086646 after 5.49 seconds
+[0m10:49:32.089816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7af0bcb040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7ad2427410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e7ad24274d0>]}
+[0m10:49:32.091919 [debug] [MainThread]: Flushing usage events
+[0m10:49:33.377936 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:52:01.142483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1eb43c050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1ed139f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1ea16f9d0>]}
+
+
+============================== 10:52:01.162064 | ddb6964c-5bf3-4dee-9723-8352965b501b ==============================
+[0m10:52:01.162064 [info ] [MainThread]: Running with dbt=1.11.11
+[0m10:52:01.164069 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --profiles-dir . --select dim_listing', 'debug': 'False', 'target_path': 'None', 'version_check': 'True', 'fail_fast': 'False', 'empty': 'False', 'quiet': 'False', 'cache_selected_only': 'False', 'introspect': 'True', 'log_path': '/home/tangguhiw/tokyoairbnb/dbt/airbnb/logs', 'warn_error': 'None', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'log_format': 'default', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True'}
+[0m10:52:02.144040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ddb6964c-5bf3-4dee-9723-8352965b501b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1ea397ce0>]}
+[0m10:52:02.470639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ddb6964c-5bf3-4dee-9723-8352965b501b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1eac34d10>]}
+[0m10:52:02.477356 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m10:52:02.751844 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m10:52:03.788817 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:52:03.790722 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m10:52:03.792933 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:52:04.037312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ddb6964c-5bf3-4dee-9723-8352965b501b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e1063450>]}
+[0m10:52:04.560931 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m10:52:04.566614 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m10:52:04.675546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ddb6964c-5bf3-4dee-9723-8352965b501b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e108f890>]}
+[0m10:52:04.677519 [info ] [MainThread]: Found 12 models, 18 data tests, 4 sources, 1 exposure, 485 macros
+[0m10:52:04.679285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ddb6964c-5bf3-4dee-9723-8352965b501b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e0e6e430>]}
+[0m10:52:04.687442 [info ] [MainThread]: 
+[0m10:52:04.688933 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m10:52:04.690087 [info ] [MainThread]: 
+[0m10:52:04.692090 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m10:52:04.695707 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb'
+[0m10:52:04.824855 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb"
+[0m10:52:04.826034 [debug] [ThreadPool]: On list_tokyo_airbnb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tokyo_airbnb"'
+    
+  
+  
+[0m10:52:04.827017 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:52:04.929043 [debug] [ThreadPool]: SQL status: OK in 0.102 seconds
+[0m10:52:04.933576 [debug] [ThreadPool]: On list_tokyo_airbnb: Close
+[0m10:52:04.936758 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tokyo_airbnb, now create_tokyo_airbnb_main_marts)
+[0m10:52:04.938753 [debug] [ThreadPool]: Creating schema "database: "tokyo_airbnb"
+schema: "main_marts"
+"
+[0m10:52:04.965910 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m10:52:04.967403 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_marts"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tokyo_airbnb'
+        and type='sqlite'
+    
+  
+[0m10:52:04.968669 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:52:04.975378 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m10:52:04.979389 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m10:52:04.980450 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: BEGIN
+[0m10:52:04.982448 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m10:52:04.983856 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m10:52:04.984828 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "create_tokyo_airbnb_main_marts"} */
+
+    
+    
+        create schema if not exists "tokyo_airbnb"."main_marts"
+    
+[0m10:52:04.988948 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m10:52:04.991579 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: COMMIT
+[0m10:52:04.992660 [debug] [ThreadPool]: Using duckdb connection "create_tokyo_airbnb_main_marts"
+[0m10:52:04.993459 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: COMMIT
+[0m10:52:04.996341 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m10:52:04.997489 [debug] [ThreadPool]: On create_tokyo_airbnb_main_marts: Close
+[0m10:52:05.028972 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tokyo_airbnb_main_marts, now list_tokyo_airbnb_main_intermediate)
+[0m10:52:05.042796 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb_main_staging'
+[0m10:52:05.057088 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tokyo_airbnb_main_marts'
+[0m10:52:05.058946 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_intermediate"
+[0m10:52:05.066677 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_staging"
+[0m10:52:05.071695 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_marts"
+[0m10:52:05.072937 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: BEGIN
+[0m10:52:05.074014 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: BEGIN
+[0m10:52:05.075333 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: BEGIN
+[0m10:52:05.076526 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:52:05.077676 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:52:05.079125 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:52:05.082796 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m10:52:05.084605 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m10:52:05.089876 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m10:52:05.092303 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_intermediate"
+[0m10:52:05.094335 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_staging"
+[0m10:52:05.096170 [debug] [ThreadPool]: Using duckdb connection "list_tokyo_airbnb_main_marts"
+[0m10:52:05.099343 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_intermediate"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_intermediate'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m10:52:05.101181 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_staging"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_staging'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m10:52:05.103131 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "connection_name": "list_tokyo_airbnb_main_marts"} */
+select
+      'tokyo_airbnb' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_marts'
+    and lower(table_catalog) = 'tokyo_airbnb'
+  
+[0m10:52:05.131891 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m10:52:05.133107 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m10:52:05.135031 [debug] [ThreadPool]: SQL status: OK in 0.027 seconds
+[0m10:52:05.145111 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: ROLLBACK
+[0m10:52:05.140425 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: ROLLBACK
+[0m10:52:05.150628 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: ROLLBACK
+[0m10:52:05.155132 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_marts'
+[0m10:52:05.156875 [debug] [ThreadPool]: On list_tokyo_airbnb_main_marts: Close
+[0m10:52:05.159391 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_intermediate'
+[0m10:52:05.168020 [debug] [ThreadPool]: On list_tokyo_airbnb_main_intermediate: Close
+[0m10:52:05.167004 [debug] [ThreadPool]: Failed to rollback 'list_tokyo_airbnb_main_staging'
+[0m10:52:05.170072 [debug] [ThreadPool]: On list_tokyo_airbnb_main_staging: Close
+[0m10:52:05.176538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ddb6964c-5bf3-4dee-9723-8352965b501b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e045e820>]}
+[0m10:52:05.178133 [debug] [MainThread]: Using duckdb connection "master"
+[0m10:52:05.179410 [debug] [MainThread]: On master: BEGIN
+[0m10:52:05.180304 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:52:05.182484 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m10:52:05.183546 [debug] [MainThread]: On master: COMMIT
+[0m10:52:05.184524 [debug] [MainThread]: Using duckdb connection "master"
+[0m10:52:05.185461 [debug] [MainThread]: On master: COMMIT
+[0m10:52:05.188200 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m10:52:05.189605 [debug] [MainThread]: On master: Close
+[0m10:52:05.202062 [debug] [Thread-1 (]: Began running node model.tokyo_airbnb.dim_listing
+[0m10:52:05.204697 [info ] [Thread-1 (]: 1 of 1 START sql table model main_marts.dim_listing ............................ [RUN]
+[0m10:52:05.213319 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_tokyo_airbnb_main_intermediate, now model.tokyo_airbnb.dim_listing)
+[0m10:52:05.215569 [debug] [Thread-1 (]: Began compiling node model.tokyo_airbnb.dim_listing
+[0m10:52:05.254266 [debug] [Thread-1 (]: Writing injected SQL for node "model.tokyo_airbnb.dim_listing"
+[0m10:52:05.257785 [debug] [Thread-1 (]: Began executing node model.tokyo_airbnb.dim_listing
+[0m10:52:05.394057 [debug] [Thread-1 (]: Writing runtime sql for node "model.tokyo_airbnb.dim_listing"
+[0m10:52:05.396692 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m10:52:05.397917 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: BEGIN
+[0m10:52:05.399056 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:52:05.401782 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:52:05.403235 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m10:52:05.404476 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+
+  
+    
+    
+
+    create  table
+      "tokyo_airbnb"."main_marts"."dim_listing__dbt_tmp"
+  
+    as (
+      WITH listings AS (
+    SELECT * FROM "tokyo_airbnb"."main_intermediate"."int_listings_enriched"
+)
+
+SELECT
+    listing_id,
+    host_id,
+    host_name,
+    listing_name,
+    neighbourhood,
+    latitude,
+    longitude,
+    property_type,
+    room_type,
+    accommodates,
+    bathrooms,
+    bedrooms,
+    beds,
+    amenities,
+    price,
+    minimum_nights,
+    maximum_nights,
+    has_availability,
+    availability_365,
+    number_of_reviews,
+    number_of_reviews_ltm,
+    first_review_date,
+    last_review_date,
+    review_scores_rating,
+    review_scores_accuracy,
+    review_scores_cleanliness,
+    review_scores_checkin,
+    review_scores_communication,
+    review_scores_location,
+    review_scores_value,
+    instant_bookable,
+    reviews_per_month,
+    total_reviews,
+    avg_calendar_price,
+    available_days,
+    total_days,
+    occupancy_rate_pct,
+    price_tier,
+    rating_category
+FROM listings
+    );
+  
+  
+[0m10:52:06.607637 [debug] [Thread-1 (]: SQL status: OK in 1.202 seconds
+[0m10:52:06.632603 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m10:52:06.634661 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'dim_listing'
+  
+[0m10:52:06.638661 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m10:52:06.643001 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m10:52:06.644836 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'dim_listing'
+  
+[0m10:52:06.649595 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:52:06.671467 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m10:52:06.672766 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+alter table "tokyo_airbnb"."main_marts"."dim_listing" rename to "dim_listing__dbt_backup"
+[0m10:52:06.677299 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m10:52:06.685770 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m10:52:06.686864 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+alter table "tokyo_airbnb"."main_marts"."dim_listing__dbt_tmp" rename to "dim_listing"
+[0m10:52:06.689205 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m10:52:06.747840 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: COMMIT
+[0m10:52:06.748972 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m10:52:06.749877 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: COMMIT
+[0m10:52:07.048027 [debug] [Thread-1 (]: SQL status: OK in 0.297 seconds
+[0m10:52:07.063433 [debug] [Thread-1 (]: Using duckdb connection "model.tokyo_airbnb.dim_listing"
+[0m10:52:07.064470 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokyo_airbnb", "target_name": "dev", "node_id": "model.tokyo_airbnb.dim_listing"} */
+
+      drop table if exists "tokyo_airbnb"."main_marts"."dim_listing__dbt_backup" cascade
+    
+[0m10:52:07.945409 [debug] [Thread-1 (]: SQL status: OK in 0.880 seconds
+[0m10:52:07.952703 [debug] [Thread-1 (]: On model.tokyo_airbnb.dim_listing: Close
+[0m10:52:07.957715 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ddb6964c-5bf3-4dee-9723-8352965b501b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e0e17410>]}
+[0m10:52:07.960515 [info ] [Thread-1 (]: 1 of 1 OK created sql table model main_marts.dim_listing ....................... [[32mOK[0m in 2.74s]
+[0m10:52:07.969353 [debug] [Thread-1 (]: Finished running node model.tokyo_airbnb.dim_listing
+[0m10:52:07.981745 [debug] [MainThread]: Using duckdb connection "master"
+[0m10:52:07.988569 [debug] [MainThread]: On master: BEGIN
+[0m10:52:07.989843 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:52:07.992822 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m10:52:07.994099 [debug] [MainThread]: On master: COMMIT
+[0m10:52:07.995523 [debug] [MainThread]: Using duckdb connection "master"
+[0m10:52:07.997035 [debug] [MainThread]: On master: COMMIT
+[0m10:52:08.000190 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m10:52:08.001898 [debug] [MainThread]: On master: Close
+[0m10:52:08.004236 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:52:08.005685 [debug] [MainThread]: Connection 'model.tokyo_airbnb.dim_listing' was properly closed.
+[0m10:52:08.006696 [debug] [MainThread]: Connection 'list_tokyo_airbnb_main_staging' was properly closed.
+[0m10:52:08.007616 [debug] [MainThread]: Connection 'list_tokyo_airbnb_main_marts' was properly closed.
+[0m10:52:08.008785 [info ] [MainThread]: 
+[0m10:52:08.009956 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 3.32 seconds (3.32s).
+[0m10:52:08.012675 [debug] [MainThread]: Command end result
+[0m10:52:08.138661 [debug] [MainThread]: Wrote artifact WritableManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/manifest.json
+[0m10:52:08.144120 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/semantic_manifest.json
+[0m10:52:08.165427 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/tangguhiw/tokyoairbnb/dbt/airbnb/target/run_results.json
+[0m10:52:08.166526 [info ] [MainThread]: 
+[0m10:52:08.167676 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:52:08.169058 [info ] [MainThread]: 
+[0m10:52:08.170969 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m10:52:08.173917 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 7.30376, "process_in_blocks": "0", "process_kernel_time": 1.784872, "process_mem_max_rss": "335480", "process_out_blocks": "66872", "process_user_time": 14.238778}
+[0m10:52:08.175739 [debug] [MainThread]: Command `dbt run` succeeded at 10:52:08.175301 after 7.31 seconds
+[0m10:52:08.177379 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e013d700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e010db30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f1e010e0d0>]}
+[0m10:52:08.179598 [debug] [MainThread]: Flushing usage events
+[0m10:52:09.288478 [debug] [MainThread]: An error was encountered while trying to flush usage events
