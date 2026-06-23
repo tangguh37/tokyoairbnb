@@ -1,0 +1,40 @@
+name: tokyo_airbnb
+profile: tokyo_airbnb
+model-paths: ["models"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  source_schema: main
+
+models:
+  tokyo_airbnb:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts
+      dim_host:
+        +materialized: table
+      dim_listing:
+        +materialized: table
+      dim_neighbourhood:
+        +materialized: table
+      fct_reviews:
+        +materialized: incremental
+        +incremental_strategy: append
+        +schema: marts
+      fct_calendar:
+        +materialized: incremental
+        +incremental_strategy: append
+        +schema: marts

@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Data
+data/
+*.duckdb
+*.csv
+
+# Airflow
+airflow/airflow.db
+airflow/webserver_config.py
+airflow/logs/
+
+# dbt
+dbt/airbnb/target/
+dbt/airbnb/dbt_packages/
+
+# Env
+.env
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,8 @@
+tokyo_airbnb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../../data/tokyo_airbnb.duckdb
+      schema: main
+      threads: 4

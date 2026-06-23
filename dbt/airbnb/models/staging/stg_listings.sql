@@ -1,0 +1,55 @@
+WITH source AS (
+    SELECT * FROM {{ source('raw', 'raw_listings') }}
+),
+
+cleaned AS (
+    SELECT
+        id AS listing_id,
+        host_id,
+        last_scraped::DATE AS last_scraped_date,
+        name AS listing_name,
+        COALESCE(neighbourhood_cleansed, neighbourhood) AS neighbourhood,
+        latitude::DOUBLE AS latitude,
+        longitude::DOUBLE AS longitude,
+        property_type,
+        room_type,
+        accommodates::INT AS accommodates,
+        bathrooms::DECIMAL(4,1) AS bathrooms,
+        bathrooms_text,
+        bedrooms::INT AS bedrooms,
+        beds::INT AS beds,
+        amenities,
+        TRY_CAST(REPLACE(REPLACE(price, '$', ''), ',', '') AS DECIMAL(10,2)) AS price,
+        minimum_nights::INT AS minimum_nights,
+        maximum_nights::INT AS maximum_nights,
+        has_availability,
+        availability_365::INT AS availability_365,
+        number_of_reviews::INT AS number_of_reviews,
+        number_of_reviews_ltm::INT AS number_of_reviews_ltm,
+        first_review::DATE AS first_review_date,
+        last_review::DATE AS last_review_date,
+        ROUND(review_scores_rating::DECIMAL(3,1) * 20, 1) AS review_scores_rating,
+        ROUND(review_scores_accuracy::DECIMAL(3,1) * 20, 0)::INT AS review_scores_accuracy,
+        ROUND(review_scores_cleanliness::DECIMAL(3,1) * 20, 0)::INT AS review_scores_cleanliness,
+        ROUND(review_scores_checkin::DECIMAL(3,1) * 20, 0)::INT AS review_scores_checkin,
+        ROUND(review_scores_communication::DECIMAL(3,1) * 20, 0)::INT AS review_scores_communication,
+        ROUND(review_scores_location::DECIMAL(3,1) * 20, 0)::INT AS review_scores_location,
+        ROUND(review_scores_value::DECIMAL(3,1) * 20, 0)::INT AS review_scores_value,
+        instant_bookable,
+        calculated_host_listings_count::INT AS host_listings_count,
+        reviews_per_month::DECIMAL(5,2) AS reviews_per_month,
+        host_name,
+        host_since::DATE AS host_since,
+        host_location,
+        host_response_time,
+        host_response_rate,
+        host_acceptance_rate,
+        host_is_superhost,
+        host_neighbourhood,
+        host_total_listings_count::INT AS host_total_listings_count,
+        host_has_profile_pic,
+        host_identity_verified
+    FROM source
+)
+
+SELECT * FROM cleaned

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_calendar
+    description: Cleaned Tokyo Airbnb calendar data
+    columns:
+      - name: listing_id
+        description: Listing identifier
+        tests: [not_null]
+      - name: calendar_date
+        description: Calendar date
+        tests: [not_null]
+      - name: is_available
+        description: Whether the listing is available on this date
+        tests: [not_null]
+      - name: price
+        description: Price for the night

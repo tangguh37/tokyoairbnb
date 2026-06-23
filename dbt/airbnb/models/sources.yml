@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main
+    database: tokyo_airbnb
+    tables:
+      - name: raw_listings
+        description: Raw Tokyo listings data from Inside Airbnb
+        loaded_at_field: "last_scraped"
+        freshness:
+          warn_after: { count: 180, period: day }
+          error_after: { count: 365, period: day }
+        columns:
+          - name: id
+            description: Airbnb listing ID
+            tests: [unique, not_null]
+
+      - name: raw_reviews
+        description: Raw Tokyo reviews data
+        loaded_at_field: "date"
+        freshness:
+          warn_after: { count: 90, period: day }
+          error_after: { count: 180, period: day }
+        columns:
+          - name: id
+            description: Review ID
+            tests: [unique, not_null]
+
+      - name: raw_calendar
+        description: Raw Tokyo calendar availability data
+        loaded_at_field: "date"
+        freshness:
+          warn_after: { count: 30, period: day }
+          error_after: { count: 60, period: day }
+
+      - name: raw_neighbourhoods
+        description: Tokyo neighbourhood definitions
+        columns:
+          - name: neighbourhood
+            description: Neighbourhood name
+            tests: [unique, not_null]

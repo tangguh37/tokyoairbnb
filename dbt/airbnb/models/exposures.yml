@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: streamlit_dashboard
+    description: >
+      Tokyo Airbnb analytics dashboard built with Streamlit
+    type: dashboard
+    maturity: high
+    url: http://localhost:8501
+    depends_on:
+      - ref('dim_listing')
+      - ref('dim_host')
+      - ref('dim_neighbourhood')
+      - ref('monthly_occupancy')
+      - ref('pricing_analysis')
+    owner:
+      name: Project Developer
+      email: dev@example.com

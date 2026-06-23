@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_reviews
+    description: Cleaned Tokyo Airbnb reviews
+    columns:
+      - name: review_id
+        description: Unique review identifier
+        tests: [unique, not_null]
+      - name: listing_id
+        description: Listing being reviewed
+        tests: [not_null]
+      - name: review_date
+        description: Date the review was left
+        tests: [not_null]
