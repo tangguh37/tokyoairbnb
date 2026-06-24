@@ -24,3 +24,6 @@ dbt/airbnb/dbt_packages/
 # OS
 .DS_Store
 Thumbs.db
+
+# dbt logs
+dbt/**/logs/
